@@ -1,0 +1,35 @@
+~*Changelog*~
+
+v0634-13102008 10/13/2008 (mm/dd/yyyy)
+	Added OS Detection
+	Added browsers (JS):
+		AOL Explorer
+		Camino
+		edbrowse
+		ELinks
+		Emacs/W3
+		Epiphany
+		Flock
+		Galeon
+		HotJava
+		Hv3
+		IBrowse
+		iCab
+		K-Meleon
+		Lobo
+		Links
+		Maxathon
+		midori
+		OmniWeb
+		SeaMonkey
+		Shiira
+		w3m
+		WebbIE
+	Added browsers (example docs):
+		Alynx
+		Net-Tamer
+	Added Mobile Browser Detection
+	Added to usage examples (of which include support for most 
+		textbased/non-javascript browsers)
+
+UserAgent Source: http://www.zytrax.com/tech/web/browser_ids.htm
