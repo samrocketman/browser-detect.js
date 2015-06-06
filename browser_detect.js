@@ -94,15 +94,18 @@ var aweb=(navigator.userAgent.indexOf("AWeb")!=-1)?1:0;
  * Mobile Browser Detection *
 \****************************/
 //regular expression created from http://www.zytrax.com/tech/web/mobile_ids.html
-var mobi_exp=/DoCoMo|UP\.[BL]|Windows CE|Xiino|CLDC|LGE|Reqwire|ProxiNet|Mini|Mobi|SEC\-SGH|Symbian|Elaine|EPOC|Berry|Blazer|AvantGo|ASTEL|armv|V80[12]S[AE]|[Pp](alm|DA|DXGW|OCKET|lucker|IE|orta)|iP(hone|od|AQ)|N(itro|etFront|okia)/;
+var mobi_exp=/[Aa](vantGo|STEL|rmv|ndroid)|[Bb](erry|lazer|REW)|CLDC|DoCoMo|[Ee](laine|POC|ricsson)|[Hh][Tt][Cc]|iP(hone|od|ad|AQ)|LGE|[Mm](ini|obi|MP)|[Nn](itro|etFront|okia|ook|ovarra)|[Pp](alm|DA|DXGW|OCKET|lucker|IE|orta|roxiNet|hone|900)|Reqwire|[Ss](EC\-SGH|ymbian|gh\-e900)|Teleca|UP\.[BL]|V80[12]S[AE]|[Ww](indows CE|ebOS)|[Xx](iino|V6850)/i;
 var isMobile=(navigator.userAgent.search(mobi_exp)>-1)?1:0;
+
 
 /******************************\
  * Operating System Detection *
 \******************************/
-var isWin=(navigator.platform.indexOf("Win")!=-1)?1:0;
-var isMac=(navigator.platform.indexOf("Mac")!=-1)?1:0;
+var isAndroid=(navigator.appVersion.indexOf("Android")!=-1)?1:0;
+var isiOS=(navigator.userAgent.search(/iP(hone|od|ad)/)>-1)?1:0;
 var isLinux=(navigator.platform.indexOf("Linux")!=-1)?1:0;
+var isMac=(navigator.platform.indexOf("Mac")!=-1)?1:0;
+var isWin=(navigator.platform.indexOf("Win")!=-1)?1:0;
 var isUnix=(navigator.appVersion.indexOf("X11")!=-1)?1:0;
 
 
@@ -140,4 +143,29 @@ For Browsers without JavaScript and some text based browsers (link within html):
 <a href="no+javascript.html" onclick="window.top.location.href='javascript+enabled.html';return false;">Enter Website</a>
 
 You should make non-javascript pages w3c compliant.
+*/
+
+/* This regular expression for detecting mobile architectures works fine in PHP as written.
+<?php
+$mobi_exp="/[Aa](vantGo|STEL|rmv|ndroid)|[Bb](erry|lazer|REW)|CLDC|DoCoMo|[Ee](laine|POC|ricsson)|[Hh][Tt][Cc]|iP(hone|od|ad|AQ)|LGE|[Mm](ini|obi|MP)|[Nn](itro|etFront|okia|ook|ovarra)|[Pp](alm|DA|DXGW|OCKET|lucker|IE|orta|roxiNet|hone|900)|Reqwire|[Ss](EC\-SGH|ymbian|gh\-e900)|Teleca|UP\.[BL]|V80[12]S[AE]|[Ww](indows CE|ebOS)|[Xx](iino|V6850)/i";
+$isMobile=preg_match($mobi_exp, $_SERVER['HTTP_USER_AGENT']);
+if($isMobile)
+{
+  echo "mobile browser\n\n";
+}
+else
+{
+  echo "not a mobile browser\n\n";
+}
+echo $_SERVER['HTTP_USER_AGENT'] . "\n\n\nUser agents test\n\n\n";
+$lines=file('useragent.txt');
+foreach($lines as $line_num => $line)
+{
+  $line_num += 1;
+  if(!preg_match($mobi_exp, $line))
+  {
+    echo "{$line_num}. " . $line;
+  }
+}
+?>
 */

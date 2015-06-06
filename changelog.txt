@@ -1,4 +1,24 @@
 ~*Changelog*~
+v0516-27072011 07/27/2011 (mm/dd/yyyy)
+  Added phones to mobile architecture detection:
+      Android
+      HTC
+      XV6850
+      nook
+      webOS
+      samsung sgh-e900
+      Teleca
+      Novarra
+      Ericsson
+      MMP
+      P900
+  Added operating systems:
+    Android
+    iOS
+  Provided a PHP example for detecting mobile 
+    architectures which I feel is useful using my regular 
+    expression for mobile devices on PHP based websites.
+
 
 v0634-13102008 10/13/2008 (mm/dd/yyyy)
 	Added OS Detection
@@ -32,4 +52,11 @@ v0634-13102008 10/13/2008 (mm/dd/yyyy)
 	Added to usage examples (of which include support for most 
 		textbased/non-javascript browsers)
 
-UserAgent Source: http://www.zytrax.com/tech/web/browser_ids.htm
+
+v1846-07102008 10/07/2008 (mm/dd/yyyy)
+Browser Detect first created/publicly released.
+
+
+UserAgent Sources: 
+http://www.zytrax.com/tech/web/browser_ids.htm
+http://www.zytrax.com/tech/web/mobile_ids.html

@@ -35,6 +35,7 @@ Browsers Detected:
 	WebbIE
 
 Operating Systems Detected:
+  Android
 	Linux
 	Mac
 	Windows
